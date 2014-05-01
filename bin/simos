@@ -1,0 +1,11 @@
+#!/bin/bash
+# simos - SimulOS launcher
+# Can be located in /usr/bin or ~/bin.
+
+SCRIPTDIR="$( dirname $0 )"
+
+source $SCRIPTDIR/globals
+
+$scpInt "$hardDrive/system/poweron.scp"
+bash "$hardDrive/system/system.exec"
+$scpInt "$hardDrive/system/poweroff.scp"
