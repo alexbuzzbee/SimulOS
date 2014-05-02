@@ -8,7 +8,7 @@ FileSystemreadFile=""
 
 cd "$hardDrive"
 
-# Takes a SimulOS path and returns a "simos file descriptor" (UNIX pathname).
+# Takes a SimulOS path and returns a "SimulOS file descriptor" (UNIX pathname).
 function FileSystem.open() {
   FileSystemopen="$disks/$1"
 }

@@ -1,0 +1,6 @@
+#!/bin/bash
+# SysCall.lib - System calls
+
+function SysCall.loadAPI() {
+  source "$apis/$1"
+}
