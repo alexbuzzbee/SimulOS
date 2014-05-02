@@ -1,0 +1,22 @@
+#!/bin/bash
+# FileSystem.lib - The file system API
+
+workingDir="hd"
+FileSystemfindPath=""
+FileSystemreadFile=""
+
+cd "$hardDrive"
+
+function FileSystem.findPath() {
+  FileSystem.findPath="$disks/$1"
+}
+
+function FileSystem.createFile() {
+  FileSystem.findPath $1
+  touch $FileSystemfindPath
+}
+
+function FileSystem.readFile() {
+  FileSystem.findPath $1
+  FileSystemreadFile="$(cat FileSystemfindPath)"
+}

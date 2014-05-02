@@ -1,4 +1,13 @@
 #!/bin/bash
 # system.exec - Core system
 
-# Code here
+source $sysCallApi
+source "$apis/FileSystem.lib"
+
+$scpInt "$hardDrive/system/boot.scp"
+
+function systemInit() {
+  # Initialization code here
+}
+
+systemInit
