@@ -4,6 +4,7 @@
 workingDir="hd"
 FileSystemopen=""
 FileSystemreadLine=""
+FileSystemreadFile=""
 
 cd "$hardDrive"
 
