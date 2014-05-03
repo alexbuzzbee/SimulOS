@@ -1,0 +1,8 @@
+#!/bin/bash
+# kernal - The SimulOS kernal.
+
+function kernel.init() {
+  # TODO: Do something here.
+}
+
+# TODO: Figure out what should go in here and what should go in SysCall.lib.
