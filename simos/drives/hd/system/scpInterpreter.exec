@@ -1,0 +1,50 @@
+#!/bin/bash
+# Script interpreter.
+
+source $sysCallApi
+SysCall.loadAPI "FileSystem"
+
+FileSystem.open $1
+script=FileSystemopen
+
+local currentDir=$hardDrive
+declare -A vars # An associative array of variables.
+
+function chdir() {
+  FileSystem.open $1
+  currentDir=$FileSystemopen
+}
+
+function mkfil() {
+  touch $currentDir/$1
+}
+
+function interpretLine() {
+  local words[0] = "" # Create an array to store the words in the line.
+  echo $1 | read -a words # Store the words in the array.
+  for i in ${words[@]}; do # Iterate through words in the line.
+    if test $words[$i] == "\$*"; then # Only do the following if the word starts with "$".
+      local varName=${$words[$i]:1} # Strip the first 1 character (The dollar sign) from the variable name
+      words[$i]=$vars[$varName] # Replace the variable reference with the value of the variable
+    fi
+  done
+  case $oper[0] in
+    "chdir") # Change directory.
+      chdir $oper[1]
+    ;;
+    "noop") # Do nothing.
+      :
+    ;;
+    "mkfil") # Create a new file.
+      mkfil $oper[1]
+    ;;
+    "set") # Set the value of a variable, define it if it doesn't already exist.
+      setVar $oper[1] $oper[2]
+    ;;
+  esac
+}
+
+while true; do
+  FileSystem.readLine $script # Read the script, line by line.
+  interpretLine $FileSystem.readLine # Pass the line to the line interpreter.
+done
