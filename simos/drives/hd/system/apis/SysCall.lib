@@ -2,7 +2,7 @@
 # SysCall.lib - System calls
 
 function SysCall.loadAPI() {
-  source "$apis/$1"
+  source "$apis/$1.lib"
 }
 
 # TODO: Add more System Calls
