@@ -3,7 +3,7 @@
 
 source "$hardDrive/system/kernel"
 source $sysCallApi
-SysCall.loadAPI FileSystem
+SysCall.loadAPI "FileSystem"
 
 $scpInt "$hardDrive/system/boot.scp"
 
