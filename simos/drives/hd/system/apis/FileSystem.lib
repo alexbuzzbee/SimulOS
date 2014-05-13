@@ -2,45 +2,43 @@
 # FileSystem.lib - The file system API
 
 workingDir="hd"
-FileSystemopen=""
-FileSystemreadLine=""
-FileSystemreadFile=""
+return=""
 
 cd "$hardDrive"
 
 # Takes a SimulOS path and returns a "SimulOS file descriptor" (UNIX pathname).
-function FileSystem.open() {
-  FileSystemopen="$disks/$1"
+function open() {
+  return="$disks/$1"
 }
 
 # Takes a SimulOS path and creates a file there. Will not clobber existing files.
-function FileSystem.createFile() {
-  FileSystem.open $1
-  touch $FileSystemopen
+function createFile() {
+  open $1
+  touch $return
 }
 
 # Takes a SimulOS path and deletes that file.
-function FileSytem.deleteFile() {
-  FileSystem.open $1
-  rm $FileSystemopen
+function deleteFile() {
+  open $1
+  rm $return
 }
 
 # Takes a  file descriptor and returns the entire text of that file.
-function FileSystem.readFile() {
-  FileSystemreadFile="$(cat $1)"
+function readFile() {
+  return="$(cat $1)"
 }
 
 # Takes a file descriptor and returns one line from that file.
-function FileSystem.readLine() {
-  read FileSystemreadLine < $1
+function readLine() {
+  read return < $1
 }
 
 # Takes a file descriptor and string and writes the string to the file. CLOBBER WARNING!
-function FileSystem.write() {
+function write() {
   echo $2 > $1
 }
 
 # Takes a file descriptor and string and appends the string to the file.
-function FileSystem.append() {
+function append() {
   echo $2 >> $1
 }

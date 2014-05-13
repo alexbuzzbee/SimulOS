@@ -2,14 +2,14 @@
 # kernal - The SimulOS kernal.
 
 # Initialize the kernel.
-function kernel.init() {
+function initKrn() {
   echo "Kernel init..." > $hardDrive/system/logs/kernel.log
   # TODO: Add some more code here.
-  kernel.krnLog "Kernel init done."
+  krnLog "Kernel init done."
 }
 
 # Log the first argument to the kernel log.
-function kernel.krnLog() {
+function krnLog() {
   echo $1 > $hardDrive/system/logs/kernel.log
 }
 

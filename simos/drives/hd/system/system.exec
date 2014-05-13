@@ -3,12 +3,12 @@
 
 source "$hardDrive/system/kernel"
 source $sysCallApi
-SysCall.loadAPI "FileSystem"
+loadAPI "FileSystem"
 
 $scpInt "$hardDrive/system/boot.scp"
 
 function systemInit() {
-  kernel.init
+  initKrn
 }
 
 # TODO: Add some real functionality, besides initialization.

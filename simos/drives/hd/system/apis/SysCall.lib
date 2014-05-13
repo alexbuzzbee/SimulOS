@@ -1,7 +1,7 @@
 #!/bin/bash
 # SysCall.lib - System calls
 
-function SysCall.loadAPI() {
+function loadAPI() {
   source "$apis/$1.lib"
 }
 

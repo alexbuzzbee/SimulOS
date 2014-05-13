@@ -2,17 +2,17 @@
 # Script interpreter.
 
 source $sysCallApi
-SysCall.loadAPI "FileSystem"
+loadAPI "FileSystem"
 
-FileSystem.open $1
-script=FileSystemopen
+open $1
+script=$return
 
 local currentDir=$hardDrive
 declare -A vars # An associative array of variables.
 
 function chdir() {
-  FileSystem.open $1
-  currentDir=$FileSystemopen
+  open $1
+  currentDir=$return
 }
 
 function mkfil() {
@@ -46,6 +46,6 @@ function interpretLine() {
 }
 
 while true; do
-  FileSystem.readLine $script # Read the script, line by line.
-  interpretLine $FileSystem.readLine # Pass the line to the line interpreter.
+  readLine $script # Read the script, line by line.
+  interpretLine $return # Pass the line to the line interpreter.
 done
