@@ -1,0 +1,23 @@
+#!/bin/bash
+# Events.lib - The API for interacting with the SimulOS Event system
+# Requires FileSystem.
+# Only the last event received will be kept.
+
+programName="$1"
+
+Eventreceive=""
+
+# Send an event to another program.
+function Event.send() {
+  FileSystem.open tmp/events/$1.evt
+  local eventFile=FileSystemopen
+  FileSystem.write eventFile $2
+}
+
+# Returns the last event from the Event file in the first argument.
+function Event.receive() {
+  FileSystem.open tmp/events/$1
+  local eventFile = FileSystemopen
+  FileSystem.readLine eventFile
+  Eventreceive=FileSystemreadLine
+}

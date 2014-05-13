@@ -1,5 +1,5 @@
 #!/bin/bash
-# name.exec - Description
+# name.exec - Description.
 
 source $sysCallApi
 
