@@ -1,0 +1,10 @@
+#!/bin/bash
+# name.exec - Description
+
+source $sysCallApi
+
+function main() {
+  # Code
+}
+
+main
