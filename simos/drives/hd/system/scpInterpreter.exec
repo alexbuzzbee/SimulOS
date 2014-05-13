@@ -41,6 +41,7 @@ function interpretLine() {
     "set") # Set the value of a variable, define it if it doesn't already exist.
       setVar $oper[1] $oper[2]
     ;;
+    # TODO: Add more script commands
   esac
 }
 
