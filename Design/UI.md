@@ -3,8 +3,8 @@ User interface design
 
 The user interface should be clean, but with some complexity, to allow for awesomeness.
 
-My initial design
------------------
+My design
+---------
 
 ```
 [===================================]
