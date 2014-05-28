@@ -3,6 +3,7 @@
 
 source $sysCallApi
 loadAPI "FileSystem"
+loadAPI "Events"
 
 open $1
 script=$return
@@ -30,16 +31,19 @@ function interpretLine() {
   done
   case $oper[0] in
     "chdir") # Change directory.
-      chdir $oper[1]
+      chdir $words[1]
     ;;
     "noop") # Do nothing.
       :
     ;;
     "mkfil") # Create a new file.
-      mkfil $oper[1]
+      mkfil $words[1]
     ;;
     "set") # Set the value of a variable, define it if it doesn't already exist.
-      setVar $oper[1] $oper[2]
+      setVar $words[1] $words[2]
+    ;;
+    "evt") # Send an event.
+      sendEvent $words[1] $words[2]
     ;;
     # TODO: Add more script commands
   esac

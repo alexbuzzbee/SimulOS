@@ -10,7 +10,7 @@ return=""
 # Send an event to an event receiver.
 function sendEvent() {
   open tmp/event_$1.evt
-  local eventFile=return
+  local eventFile=$return
   write eventFile $2
 }
 
