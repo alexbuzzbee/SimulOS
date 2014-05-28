@@ -17,18 +17,18 @@ Comments:
 Functions:
 
 ```bash
-name="" # For functions with return values.
+return="" # For functions with return values.
 
 # Description of the function.
 # return-value name [--options] required-arguments [optional-arguments] (Optional)
 function name() {
 code
-name=return-value
+return=return-value
 }
 
 function caller() {
 name required-arguments
-dostuffwith $name
+dostuffwith $return
 }
 ```
 
