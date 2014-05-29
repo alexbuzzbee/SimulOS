@@ -3,7 +3,7 @@
 
 # Initialize the kernel.
 function initKrn() {
-  echo "Kernel init..." > $hardDrive/system/logs/kernel.log
+  krnLog "Kernel init..."
   # TODO: Add some more code here.
   krnLog "Kernel init done."
 }

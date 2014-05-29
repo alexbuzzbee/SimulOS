@@ -5,10 +5,11 @@ source "$hardDrive/system/kernel"
 source $sysCallApi
 loadAPI "FileSystem"
 
-$scpInt "$hardDrive/system/boot.scp"
+#$scpInt "$hardDrive/system/boot.scp" # Currently broken.
 
 function systemInit() {
   initKrn
+  echo "Booted!"
 }
 
 # TODO: Add some real functionality, besides initialization.

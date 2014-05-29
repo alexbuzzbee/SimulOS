@@ -8,8 +8,8 @@ loadAPI "Events"
 open $1
 script=$return
 
-local currentDir=$hardDrive
-declare -A vars # An associative array of variables.
+currentDir=$hardDrive
+declare -a vars # An associative array of variables.
 
 function chdir() {
   open $1
@@ -21,7 +21,7 @@ function mkfil() {
 }
 
 function interpretLine() {
-  local words[0] = "" # Create an array to store the words in the line.
+  local words[0]="" # Create an array to store the words in the line.
   echo $1 | read -a words # Store the words in the array.
   for i in ${words[@]}; do # Iterate through words in the line.
     if test $words[$i] == "\$*"; then # Only do the following if the word starts with "$".
@@ -44,6 +44,9 @@ function interpretLine() {
     ;;
     "evt") # Send an event.
       sendEvent $words[1] $words[2]
+    ;;
+    "exit")
+      exit 0
     ;;
     # TODO: Add more script commands
   esac

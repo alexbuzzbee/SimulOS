@@ -6,6 +6,4 @@ SCRIPTDIR="$( dirname $0 )"
 
 source $SCRIPTDIR/globals.cfg
 
-$scpInt "$hardDrive/system/poweron.scp"
 bash "$hardDrive/system/system.exec"
-$scpInt "$hardDrive/system/poweroff.scp"
