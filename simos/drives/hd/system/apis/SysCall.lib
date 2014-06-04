@@ -5,4 +5,16 @@ function loadAPI() {
   source "$apis/$1.lib"
 }
 
+# Launch a program in the background.
+function launchBg() {
+  open $1
+  bg $return
+}
+
+# Launch a program in the foreground.
+function launchFg() {
+  open $1
+  fg $return
+}
+
 # TODO: Add more System Calls
