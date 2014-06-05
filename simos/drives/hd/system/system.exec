@@ -9,7 +9,7 @@ loadAPI "FileSystem"
 
 function systemInit() {
   initKrn
-  echo "Booted!"
+  launchFg "hd/system/hackyUI.exec"
 }
 
 # TODO: Add some real functionality, besides initialization.

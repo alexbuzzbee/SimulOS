@@ -1,0 +1,35 @@
+#!/bin/bash
+# name.exec - Description.
+
+source $sysCallApi
+
+function menu() {
+  local selection
+  echo "[======================================]"
+  echo "|               SimulOS                |"
+  echo "[======================================]"
+  echo "|                                      |"
+  echo "| 1. Help                              |"
+  echo "| 2. Reboot                            |"
+  echo "| 3. Shut down                         |"
+  echo "|                                      |"
+  echo "[======================================]"
+  echo -n "Select[1, 2, 3]: "
+  read selection
+  case $selection in
+    "1")
+      clear
+      echo "Not implemented."
+    ;;
+    "2")
+      clear
+      echo "Not implemented."
+    ;;
+    "3")
+      exit 0
+    ;;
+}
+
+while true; do
+  menu
+done
