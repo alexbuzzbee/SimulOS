@@ -8,13 +8,13 @@ function loadAPI() {
 # Launch a program in the background.
 function launchBg() {
   open $1
-  bg $return
+  bash $return &
 }
 
 # Launch a program in the foreground.
 function launchFg() {
   open $1
-  fg $return
+  bash $return
 }
 
 # TODO: Add more System Calls
