@@ -3,6 +3,7 @@
 
 # Initialize the kernel.
 function initKrn() {
+  echo "Booting kernel..."
   krnLogInit
   krnLog "Kernel init..."
   initVfs
@@ -11,6 +12,7 @@ function initKrn() {
 }
 
 function haltKrn() {
+  echo "Halting..."
   krnLog "Halting system..."
   deinitVfs
 }
