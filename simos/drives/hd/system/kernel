@@ -40,8 +40,10 @@ function krnLogInit() {
 
 # Log the first argument to the kernel log.
 function krnLog() {
+  local datetime
   open hd/system/logs/kernel.log
-  echo $1 >> $return
+  datetime=$(date)
+  echo "$datetime: $1" >> $return
 }
 
 # TODO: Figure out what should go in here and what should go in SysCall.lib.
