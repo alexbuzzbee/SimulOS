@@ -5,8 +5,20 @@
 function initKrn() {
   krnLogInit
   krnLog "Kernel init..."
+  initVfs
   # TODO: Add some more code here.
   krnLog "Kernel init done."
+}
+
+function initVfs() {
+  krnLog "Initializing virtual file system..."
+  krnLog "Mapping VFS..."
+  mkdir $drives/vfs
+  krnLog "Creating vfs/dev..."
+  mkdir $drives/vfs/dev
+  krnLog "Adding null device..."
+  ln -s /dev/null $drives/vfs/dev/null # Link to POSIX null device.
+  krnLog "Virtual file system initialized."
 }
 
 function krnLogInit() {
