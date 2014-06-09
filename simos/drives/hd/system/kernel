@@ -11,6 +11,7 @@ function initKrn() {
 }
 
 function haltKrn() {
+  krnLog "Halting system..."
   deinitVfs
 }
 
@@ -26,6 +27,7 @@ function initVfs() {
 }
 
 function deinitVfs() {
+  krnLog "Unmapping VFS..."
   rm -rf $disks/vfs
 }
 
