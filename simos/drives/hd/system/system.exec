@@ -10,6 +10,7 @@ loadAPI "FileSystem"
 function systemInit() {
   initKrn
   launchFg "hd/system/hackyUI.exec"
+  haltKrn
 }
 
 # TODO: Add some real functionality, besides initialization.

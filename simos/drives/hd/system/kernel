@@ -10,6 +10,10 @@ function initKrn() {
   krnLog "Kernel init done."
 }
 
+function haltKrn() {
+  deinitVfs
+}
+
 function initVfs() {
   krnLog "Initializing virtual file system..."
   krnLog "Mapping VFS..."
@@ -19,6 +23,10 @@ function initVfs() {
   krnLog "Adding null device..."
   ln -s /dev/null $disks/vfs/dev/null # Link to POSIX null device.
   krnLog "Virtual file system initialized."
+}
+
+function deinitVfs() {
+  rm -rf $disks/vfs
 }
 
 function krnLogInit() {
