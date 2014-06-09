@@ -13,11 +13,11 @@ function initKrn() {
 function initVfs() {
   krnLog "Initializing virtual file system..."
   krnLog "Mapping VFS..."
-  mkdir $drives/vfs
+  mkdir $disks/vfs
   krnLog "Creating vfs/dev..."
-  mkdir $drives/vfs/dev
+  mkdir $disks/vfs/dev
   krnLog "Adding null device..."
-  ln -s /dev/null $drives/vfs/dev/null # Link to POSIX null device.
+  ln -s /dev/null $disks/vfs/dev/null # Link to POSIX null device.
   krnLog "Virtual file system initialized."
 }
 
