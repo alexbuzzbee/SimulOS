@@ -5,16 +5,17 @@
 function initKrn() {
   echo "Booting kernel..."
   krnLogInit
-  krnLog "Kernel init..."
+  krnLog "Initializing kernel..."
   initVfs
   # TODO: Add some more code here.
-  krnLog "Kernel init done."
+  krnLog "Kernel ready."
 }
 
 function haltKrn() {
   echo "Halting..."
   krnLog "Halting system..."
   deinitVfs
+  krnLog "System halted."
 }
 
 function initVfs() {
@@ -45,5 +46,3 @@ function krnLog() {
   datetime=$(date)
   echo "$datetime: $1" >> $return
 }
-
-# TODO: Figure out what should go in here and what should go in SysCall.lib.
