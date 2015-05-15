@@ -23,7 +23,7 @@ function deleteFile() {
   rm $return
 }
 
-# Takes a  file descriptor and returns the entire text of that file.
+# Takes a file descriptor and returns the entire text of that file.
 function readFile() {
   return="$(cat $1)"
 }

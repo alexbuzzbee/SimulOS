@@ -1,5 +1,5 @@
 #!/bin/bash
-# kernal - The SimulOS kernal.
+# kernel - The SimulOS kernal.
 
 # Initialize the kernel.
 function initKrn() {

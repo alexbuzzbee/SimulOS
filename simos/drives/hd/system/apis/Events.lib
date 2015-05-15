@@ -40,7 +40,7 @@ function clearEvents() {
 # Returns the last event from the Event receiver in the first argument.
 function receiveEvent() {
   open hd/tmp/event_$1.evt
-  local eventFile=return
+  local eventFile=$return
   readLine eventFile
   return=$return
 }

@@ -1,7 +1,7 @@
 SimulOS
 =======
 
-An "Operating System" simulation writen in bash shell script.
+An "Operating System" simulation written in bash shell script.
 
 Style information
 -----------------
