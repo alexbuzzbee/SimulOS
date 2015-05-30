@@ -1,6 +1,8 @@
 SimulOS
 =======
 
+***PROJECT IS DISCONTINUED***
+
 An "Operating System" simulation written in bash shell script.
 
 Style information
